@@ -1,7 +1,7 @@
 pipeline {
-  agent none
+  agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         retry(count: 3) {
           echo 'Test'
