@@ -1,13 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('Initialize Environments') {
       steps {
-        retry(count: 3) {
-          echo 'Test'
-          sleep 3
-        }
-        
+        input(message: 'are you sure to build', id: '1', ok: 'yes')
       }
     }
   }
