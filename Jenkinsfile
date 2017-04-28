@@ -3,7 +3,21 @@ pipeline {
   stages {
     stage('Initialize Environments') {
       steps {
-        input(message: 'are you sure to build', id: '1', ok: 'yes')
+        parallel(
+          "Initialize Env": {
+            sh 'echo windowsxp'
+            
+          },
+          "": {
+            sh 'echo windowsxp'
+            
+          }
+        )
+      }
+    }
+    stage('Exit') {
+      steps {
+        echo 'Finished'
       }
     }
   }
